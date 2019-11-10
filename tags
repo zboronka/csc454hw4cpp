@@ -1,0 +1,85 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_OUTPUT_MODE	u-ctags	/u-ctags or e-ctags/
+!_TAG_PROGRAM_AUTHOR	Universal Ctags Team	//
+!_TAG_PROGRAM_NAME	Universal Ctags	/Derived from Exuberant Ctags/
+!_TAG_PROGRAM_URL	https://ctags.io/	/official site/
+!_TAG_PROGRAM_VERSION	0.0.0	/3fdf28bc/
+CC	Makefile	/^CC=g++$/;"	m
+COLORS_HPP	colors.hpp	/^#define COLORS_HPP$/;"	d
+CON	event.hpp	/^enum Delta { EXT, INT, CON };$/;"	e	enum:Delta
+CONCOLOR	colors.hpp	/^#define CONCOLOR /;"	d
+CYAN	colors.hpp	/^#define CYAN /;"	d
+Delta	event.hpp	/^enum Delta { EXT, INT, CON };$/;"	g
+EVENT_HPP	event.hpp	/^#define EVENT_HPP$/;"	d
+EXT	event.hpp	/^enum Delta { EXT, INT, CON };$/;"	e	enum:Delta
+EXTCOLOR	colors.hpp	/^#define EXTCOLOR /;"	d
+Event	event.cpp	/^Event::Event(Delta delta, TotalTime* time, VendingMachine* target) {$/;"	f	class:Event
+Event	event.cpp	/^Event::Event(Delta delta, TotalTime* time, VendingMachine* target, char input) {$/;"	f	class:Event
+Event	event.hpp	/^class Event {$/;"	c
+GREEN	colors.hpp	/^#define GREEN /;"	d
+INT	event.hpp	/^enum Delta { EXT, INT, CON };$/;"	e	enum:Delta
+INTCOLOR	colors.hpp	/^#define INTCOLOR /;"	d
+LIBS	Makefile	/^LIBS=$/;"	m
+OUTPUT	colors.hpp	/^#define OUTPUT /;"	d
+PIPE_HPP	pipe.hpp	/^#define PIPE_HPP$/;"	d
+PORT_HPP	port.hpp	/^#define PORT_HPP$/;"	d
+PURPLE	colors.hpp	/^#define PURPLE /;"	d
+Pipe	pipe.hpp	/^		Pipe(Port<T>* input, Port<T>* output) { this->input = input; this->output = output; }$/;"	f	class:Pipe
+Pipe	pipe.hpp	/^class Pipe {$/;"	c
+Port	port.hpp	/^class Port {$/;"	c
+RED	colors.hpp	/^#define RED /;"	d
+RESET	colors.hpp	/^#define RESET /;"	d
+SOURCE	Makefile	/^SOURCE=*.cpp$/;"	m
+TARGET	Makefile	/^TARGET=-o main$/;"	m
+TOTALTIME_HPP	totaltime.hpp	/^#define TOTALTIME_HPP$/;"	d
+TotalTime	totaltime.hpp	/^		TotalTime(double real_time, int discrete_time) { this->real_time = real_time; this->discrete_t/;"	f	class:TotalTime
+TotalTime	totaltime.hpp	/^class TotalTime {$/;"	c
+VENDINGMACHINE_HPP	vendingmachine.hpp	/^#define VENDINGMACHINE_HPP$/;"	d
+VendingMachine	vendingmachine.cpp	/^VendingMachine::VendingMachine(int quarters, int dimes, int nickels, int value) {$/;"	f	class:VendingMachine
+VendingMachine	vendingmachine.hpp	/^class VendingMachine {$/;"	c
+YELLOW	colors.hpp	/^#define YELLOW /;"	d
+advance	totaltime.cpp	/^TotalTime* TotalTime::advance(TotalTime* b) {$/;"	f	class:TotalTime	typeref:typename:TotalTime *
+advance	totaltime.cpp	/^TotalTime* TotalTime::advance(double b) {$/;"	f	class:TotalTime	typeref:typename:TotalTime *
+all	Makefile	/^all:$/;"	t
+available	port.hpp	/^		bool available() { return open; }$/;"	f	class:Port	typeref:typename:bool
+delta	event.hpp	/^		Delta delta;$/;"	m	class:Event	typeref:typename:Delta
+deltacon	vendingmachine.cpp	/^void VendingMachine::deltacon() {$/;"	f	class:VendingMachine	typeref:typename:void
+deltaext	vendingmachine.cpp	/^void VendingMachine::deltaext(double e) {$/;"	f	class:VendingMachine	typeref:typename:void
+deltaint	vendingmachine.cpp	/^void VendingMachine::deltaint() {$/;"	f	class:VendingMachine	typeref:typename:void
+dimes	vendingmachine.hpp	/^		int dimes;$/;"	m	class:VendingMachine	typeref:typename:int
+discrete_time	totaltime.hpp	/^		int discrete_time;$/;"	m	class:TotalTime	typeref:typename:int
+get	port.hpp	/^		T get() { if(open) { open = false; return payload; } throw "PortNotOpenException"; }$/;"	f	class:Port	typeref:typename:T
+getChange	vendingmachine.cpp	/^string VendingMachine::getChange(int v) {$/;"	f	class:VendingMachine	typeref:typename:string
+input	event.hpp	/^		char input = 0;$/;"	m	class:Event	typeref:typename:char
+input	pipe.hpp	/^		Port<T>* input;$/;"	m	class:Pipe	typeref:typename:Port<T> *
+input	vendingmachine.hpp	/^		Port<char>* input;$/;"	m	class:VendingMachine	typeref:typename:Port<char> *
+internal	vendingmachine.hpp	/^		Event* internal;$/;"	m	class:VendingMachine	typeref:typename:Event *
+lambda	vendingmachine.cpp	/^void VendingMachine::lambda() {$/;"	f	class:VendingMachine	typeref:typename:void
+length	totaltime.cpp	/^double TotalTime::length(TotalTime* b) {$/;"	f	class:TotalTime	typeref:typename:double
+main	hw4.cpp	/^int main() {$/;"	f	typeref:typename:int
+nickels	vendingmachine.hpp	/^		int nickels;$/;"	m	class:VendingMachine	typeref:typename:int
+open	port.hpp	/^		bool open = false;$/;"	m	class:Port	typeref:typename:bool
+operator !=	totaltime.cpp	/^bool operator!=(TotalTime const& a, TotalTime const& b) {$/;"	f	typeref:typename:bool
+operator <	event.cpp	/^bool operator<(Event const& a, Event const& b) {$/;"	f	typeref:typename:bool
+operator <	totaltime.cpp	/^bool operator<(TotalTime const& a, TotalTime const& b) {$/;"	f	typeref:typename:bool
+operator <<	event.cpp	/^std::ostream& operator<<(std::ostream& strm, Event const& a) {$/;"	f	typeref:typename:std::ostream &
+operator <<	totaltime.cpp	/^std::ostream& operator<<(std::ostream &strm, TotalTime const& a) {$/;"	f	typeref:typename:std::ostream &
+operator <<	vendingmachine.cpp	/^ostream& operator<<(ostream& strm, VendingMachine const& a) {$/;"	f	typeref:typename:ostream &
+operator <=	totaltime.cpp	/^bool operator<=(TotalTime const& a, TotalTime const& b) {$/;"	f	typeref:typename:bool
+operator ==	event.cpp	/^bool operator==(Event const& a, Event const& b) {$/;"	f	typeref:typename:bool
+operator ==	totaltime.cpp	/^bool operator==(TotalTime const& a, TotalTime const& b) {$/;"	f	typeref:typename:bool
+operator >	totaltime.cpp	/^bool operator>(TotalTime const& a, TotalTime const& b) {$/;"	f	typeref:typename:bool
+operator >=	totaltime.cpp	/^bool operator>=(TotalTime const& a, TotalTime const& b) {$/;"	f	typeref:typename:bool
+output	pipe.hpp	/^		Port<T>* output;$/;"	m	class:Pipe	typeref:typename:Port<T> *
+output	vendingmachine.hpp	/^		Port<string>* output;$/;"	m	class:VendingMachine	typeref:typename:Port<string> *
+payload	port.hpp	/^		T payload;$/;"	m	class:Port	typeref:typename:T
+pipe	pipe.hpp	/^		bool pipe() { if(input->available()) { output->set(input->get()); return true; } return false;/;"	f	class:Pipe	typeref:typename:bool
+quarters	vendingmachine.hpp	/^		int quarters;$/;"	m	class:VendingMachine	typeref:typename:int
+real_time	totaltime.hpp	/^		double real_time;$/;"	m	class:TotalTime	typeref:typename:double
+set	port.hpp	/^		void set(T t) { payload = t; open = true; }$/;"	f	class:Port	typeref:typename:void
+ta	vendingmachine.hpp	/^		double ta() { return value > 0 ? 2 : -1; }$/;"	f	class:VendingMachine	typeref:typename:double
+target	event.hpp	/^		VendingMachine* target;$/;"	m	class:Event	typeref:typename:VendingMachine *
+time	event.hpp	/^		TotalTime* time;$/;"	m	class:Event	typeref:typename:TotalTime *
+value	vendingmachine.hpp	/^		int value;$/;"	m	class:VendingMachine	typeref:typename:int
+~VendingMachine	vendingmachine.hpp	/^		~VendingMachine() { delete input; delete output; }$/;"	f	class:VendingMachine
