@@ -41,7 +41,7 @@ int main() {
 		if(e.input != 0) {
 			e.target->input->set(e.input);
 			cout << PURPLE << "INPUT" << RESET << endl;
-			cout << e.input << endl;;
+			cout << e.input << endl;
 		}
 
 		if(!pqueue->empty() && *e.time == *pqueue->front().time) {
