@@ -80,6 +80,7 @@ int main() {
 			}
 		} catch (const char* msg) {
 			cerr << msg << endl;
+			delete e.time;
 			break;
 		}
 
