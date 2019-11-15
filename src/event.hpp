@@ -17,7 +17,7 @@ class Event {
 		Event(Delta, TotalTime*, VendingMachine*);
 		Event(Delta, TotalTime*, VendingMachine*, char); 
 
-		friend bool operator<(Event const&, Event const&); 
+		static bool compare(Event const&, Event const&);
 		friend bool operator==(Event const&, Event const&);
 		friend std::ostream& operator<<(std::ostream&, Event const&);
 };

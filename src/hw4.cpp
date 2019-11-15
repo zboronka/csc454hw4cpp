@@ -30,14 +30,14 @@ int main() {
 		auto words_end = sregex_iterator();
 		for(sregex_iterator i = words_begin; i != words_end; i++) {
 			pqueue->push_back(Event(EXT, new TotalTime(atof((*i)[1].str().c_str()), 0), v, (*i)[2].str().c_str()[0]));
-			make_heap(pqueue->begin(), pqueue->end());
+			make_heap(pqueue->begin(), pqueue->end(), Event::compare);
 		}
 	}
 
 	while(!pqueue->empty()) {
 		Event e = pqueue->front();
 		pqueue->erase(pqueue->begin());
-		make_heap(pqueue->begin(), pqueue->end());
+		make_heap(pqueue->begin(), pqueue->end(), Event::compare);
 		if(e.input != 0) {
 			e.target->input->set(e.input);
 			cout << PURPLE << "INPUT" << RESET << endl;
@@ -51,7 +51,7 @@ int main() {
 
 			pqueue->erase(pqueue->begin());
 			pqueue->push_back(Event(CON, e.time->advance(0.0), e.target, e.input));
-			make_heap(pqueue->begin(), pqueue->end());
+			make_heap(pqueue->begin(), pqueue->end(), Event::compare);
 			continue;
 		}
 
@@ -63,7 +63,7 @@ int main() {
 						for(auto i = pqueue->begin(); i < pqueue->end(); i++) {
 							if(*e.target->internal==*i) {
 								pqueue->erase(i);
-								make_heap(pqueue->begin(), pqueue->end());
+								make_heap(pqueue->begin(), pqueue->end(), Event::compare);
 							}
 						}
 					}
@@ -91,7 +91,7 @@ int main() {
 			}
 			e.target->internal = new Event(INT, e.time->advance(e.target->ta()), e.target);
 			pqueue->push_back(*e.target->internal);
-			make_heap(pqueue->begin(), pqueue->end());
+			make_heap(pqueue->begin(), pqueue->end(), Event::compare);
 		}
 
 		cout << e << endl;

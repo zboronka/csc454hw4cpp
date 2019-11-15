@@ -13,7 +13,7 @@ Event::Event(Delta delta, TotalTime* time, VendingMachine* target, char input) {
 	this->input = input;
 }
 
-bool operator<(Event const& a, Event const& b) {
+bool Event::compare(Event const& a, Event const& b) {
 	return *a.time == *b.time ? a.delta > b.delta : *a.time > *b.time;
 }
 

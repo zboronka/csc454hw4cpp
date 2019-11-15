@@ -1,6 +1,6 @@
 CC=g++
 FLAGS=-g -std=c++17
-SOURCE=*.cpp
+SOURCE=src/*.cpp
 TARGET=-o main
 LIBS=
 all:
