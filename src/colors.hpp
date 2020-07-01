@@ -1,18 +1,20 @@
 #ifndef COLORS_HPP
 #define COLORS_HPP
 
-#define RED    "\u001b[31m"
-#define GREEN  "\u001b[32m"
-#define YELLOW "\u001b[33m"
-#define PURPLE "\u001b[35m"
-#define CYAN   "\u001b[36m"
+namespace colors {
+	const std::string RED = "\u001b[31m";
+	const std::string GREEN  = "\u001b[32m";
+	const std::string YELLOW = "\u001b[33m";
+	const std::string PURPLE = "\u001b[35m";
+	const std::string CYAN   = "\u001b[36m";
 
-#define INTCOLOR RED
-#define EXTCOLOR GREEN
-#define CONCOLOR YELLOW
-#define INPUT    PURPLE
-#define OUTPUT   CYAN
+	const std::string INTCOLOR = RED;
+	const std::string EXTCOLOR = GREEN;
+	const std::string CONCOLOR = YELLOW;
+	const std::string INPUT    = PURPLE;
+	const std::string OUTPUT   = CYAN;
 
-#define RESET  "\u001b[39;49m"
+	const std::string RESET  = "\u001b[39;49m";
+}
 
 #endif

@@ -2,14 +2,29 @@
 #define PIPE_HPP
 
 #include "port.hpp"
+#include "mooremachine.hpp"
 
 template <class T>
 class Pipe {
 	public:
-		Port<T>* input;
-		Port<T>* output;
-		Pipe(Port<T>* input, Port<T>* output) { this->input = input; this->output = output; }
-		bool pipe() { if(input->available()) { output->set(input->get()); return true; } return false; }
+		Port<T>* input_port;
+		Port<T>* output_port;
+		MooreMachine* input_machine;
+		MooreMachine* output_machine;
+
+		Pipe(Port<T>* input_port, Port<T>* output_port, MooreMachine* input_machine, MooreMachine* out_machine) { 
+			this->input_port = input_port;
+			this->output_port = output_port;
+			this->input_machine = input_machine;
+			this->output_machine = output_machine;
+		}
+		bool pipe() {
+			if(input_port->available()) {
+				output_port->set(input_port->get());
+				return true;
+			} 
+			return false;
+		}
 };
 
 #endif

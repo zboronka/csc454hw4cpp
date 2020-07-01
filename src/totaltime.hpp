@@ -18,9 +18,9 @@ class TotalTime {
 		friend bool operator!=(TotalTime const& a, TotalTime const& b);
 		friend std::ostream& operator<<(std::ostream&, TotalTime const&);
 
-		TotalTime* advance(TotalTime*);
-		TotalTime* advance(double);
-		double length(TotalTime*);
+		TotalTime advance(TotalTime);
+		TotalTime advance(double);
+		double length(TotalTime);
 };
 
 #endif

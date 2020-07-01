@@ -3,13 +3,12 @@
 
 #include <string>
 
+#include "mooremachine.hpp"
 #include "port.hpp"
 #include "event.hpp"
 
-using namespace std;
-
 class Event;
-class VendingMachine {
+class VendingMachine: public MooreMachine {
 	private:
 		int quarters;
 		int dimes;
@@ -17,11 +16,10 @@ class VendingMachine {
 
 		int value;
 
-		string getChange(int v);
+		std::string getChange(int v);
 	public:
 		Port<char>* input;
-		Port<string>* output;
-		Event* internal;
+		Port<std::string>* output;
 
 		VendingMachine(int, int, int, int);
 		~VendingMachine() { delete input; delete output; }
@@ -33,7 +31,7 @@ class VendingMachine {
 		void deltaext(double);
 		void deltacon();
 
-		friend ostream& operator<<(ostream&, VendingMachine const&);
+		std::string insertion() const;
 };
 
 #endif

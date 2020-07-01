@@ -8,7 +8,7 @@ VendingMachine::VendingMachine(int quarters, int dimes, int nickels, int value) 
 }
 
 void VendingMachine::lambda() {
-	string ret = "";
+	std::string ret = "";
 
 	ret += getChange(value % 100);
 
@@ -20,7 +20,7 @@ void VendingMachine::lambda() {
 }
 
 void VendingMachine::deltaint() {
-	string changeString = getChange(value);
+	std::string changeString = getChange(value);
 
 	for(auto c = changeString.begin(); c < changeString.end(); c++) {
 		switch(*c) {
@@ -78,7 +78,7 @@ void VendingMachine::deltacon() {
 			break;
 	}
 
-	string changeString = getChange(value);
+	std::string changeString = getChange(value);
 
 	for(auto c = changeString.begin(); c < changeString.end(); c++) {
 		switch(*c) {
@@ -97,8 +97,8 @@ void VendingMachine::deltacon() {
 	}
 }
 
-string VendingMachine::getChange(int v) {
-	string ret = "";
+std::string VendingMachine::getChange(int v) {
+	std::string ret = "";
 
 	int q = v / 25 > quarters ? quarters : v / 25;
 	int d = (v-q*25) / 10 > dimes ? dimes : (v-q*25) / 10;
@@ -121,8 +121,11 @@ string VendingMachine::getChange(int v) {
 	return ret;
 }
 
-ostream& operator<<(ostream& strm, VendingMachine const& a) {
-	strm << OUTPUT << "OUTPUT" << RESET << endl;
-	strm << a.output->get();
-	return strm;
+std::string VendingMachine::insertion() const {
+	std::string ret = colors::OUTPUT;
+	ret += "OUTPUT";
+	ret += colors::RESET;
+	ret += "\n";
+	ret += output->get();
+	return ret;
 }
